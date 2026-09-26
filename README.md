@@ -1,8 +1,16 @@
 # ML Trading Signal System: A Cross-Asset Validation Case Study
 
+**Younus Hassen Abdulkadir** — Etehaad International School
+
 An independent research project investigating a specific, common failure mode in applied machine learning for finance: models that look highly successful in backtesting but fail to generalize to new data or new assets ("backtest overfitting").
 
 **Read the full research paper:** [`research_paper.docx`](./research_paper.docx)
+
+**Note on this repository's history:** this project was fully researched, built, and tested privately over several weeks before being uploaded to GitHub as a completed body of work. The commit history reflects the upload of a finished project, not the full incremental development process.
+
+## Disclaimer — Not Financial Advice
+
+**This project is for educational and research purposes only. It is not financial advice, and the system it describes is not recommended for real trading with real money.** All results in this repository come from backtesting and paper trading (simulated money only) — no real funds were ever traded. Past backtested or paper-traded performance does not indicate future results, and the paper itself documents multiple cases where seemingly strong results failed to generalize. Nothing in this repository, its code, or its accompanying paper should be interpreted as investment advice or a recommendation to buy, sell, or hold any security. Anyone using this code with real money does so entirely at their own risk and discretion.
 
 ## What this project actually found
 
@@ -14,7 +22,7 @@ An independent research project investigating a specific, common failure mode in
 
 4. **An alternative labeling method (triple-barrier) was tested and rejected** after it achieved *higher* raw accuracy (52.3% vs. 46.2%) while performing *worse* as an actual trading strategy — because it had learned to predict "SELL" almost every time, inflating its accuracy score while providing little useful signal. Reported as a negative result rather than omitted.
 
-5. **The validated system was deployed as a live, automated paper-trading bot** (Alpaca Markets) with real risk controls (stop-loss, take-profit, daily loss limits), for ongoing forward validation with real, out-of-sample market data.
+5. **The validated system was deployed as a live, automated paper-trading bot** (Alpaca Markets) with real risk controls (stop-loss, take-profit, daily loss limits), for ongoing forward validation with real, out-of-sample market data — simulated money only.
 
 ## Repository contents
 
@@ -28,7 +36,7 @@ An independent research project investigating a specific, common failure mode in
 | `main.py` | Runs the full single-asset pipeline end to end |
 | `train_pooled.py` | Trains and evaluates the cross-asset pooled model (Experiment 2) |
 | `tune.py` / `tune_pooled.py` | Hyperparameter search, single-asset and pooled |
-| `alpaca_trader.py` / `run_bot.py` | Live paper-trading deployment with risk management |
+| `alpaca_trader.py` / `run_bot.py` | Paper-trading deployment with risk management |
 | `research_paper.docx` | The full write-up of methodology, results, and findings |
 
 ## Methodology notes
@@ -40,7 +48,3 @@ An independent research project investigating a specific, common failure mode in
 ## A note on how this was built
 
 This project was implemented with the assistance of an AI coding assistant (Claude, Anthropic), directed by the author. The experimental design, the decision to test cross-asset generalization after the first result looked suspiciously strong, the decision to test and reject the triple-barrier hypothesis, and the interpretation of all results are the author's own. This is stated directly rather than left ambiguous.
-
-## Disclaimer
-
-This is a research and educational project, not financial advice. Nothing here should be read as a recommendation to buy, sell, or hold any security. Past backtested or paper-traded performance does not indicate future results.
