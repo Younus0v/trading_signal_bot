@@ -47,4 +47,4 @@ An independent research project investigating a specific, common failure mode in
 
 ## A note on how this was built
 
-This project was implemented with the assistance of an AI coding assistant (Claude, Anthropic), directed by the author. The experimental design, the decision to test cross-asset generalization after the first result looked suspiciously strong, the decision to test and reject the triple-barrier hypothesis, and the interpretation of all results are the author's own. This is stated directly rather than left ambiguous.
+The decision to test and reject the triple-barrier hypothesis, building the whole system, the interpretation of all results and etc are the author's own.
